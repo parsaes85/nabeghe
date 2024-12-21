@@ -8,8 +8,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primaryBlue: "#1d4ed8"
+      },
+      fontFamily: {
+        Yekan: ["Yekan"],
       },
     },
   },
