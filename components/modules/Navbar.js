@@ -7,7 +7,7 @@ import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined
 
 function Navbar() {
   return (
-    <div className="border-b px-10 py-4 fixed top-0 right-0 w-full bg-white bg-opacity-90 backdrop-blur-md">
+    <div className="border-b px-10 py-4 fixed z-40 top-0 right-0 w-full bg-white bg-opacity-[0.98] backdrop-blur-md">
       <div className="flex justify-between">
         <div className="flex gap-6 items-center">
           <Link href="/">
