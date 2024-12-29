@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Filters from "./Filters";
 import CoursesList from "./CoursesList";
