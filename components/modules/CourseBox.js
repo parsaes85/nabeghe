@@ -56,10 +56,10 @@ function CourseBox() {
             </div>
           </div>
           <div>
-            <p className="text-gray-700 line-through tracking-[-0.07em] text-lg text-end -mb-1">
+            <p className="text-gray-700 line-through tracking-[-0.12em] text-lg text-end -mb-1">
               ۱،۱۹۹،۰۰۰
             </p>
-            <p className="font-bold text-[22px] tracking-[-0.07em]">
+            <p className="font-bold text-[22px] tracking-[-0.09em]">
               ۱،۰۷۹،۰۰۰{" "}
               <span className="font-normal text-gray-600 text-sm tracking-normal">
                 تومان
