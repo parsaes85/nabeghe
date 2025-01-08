@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import WindowIcon from "@mui/icons-material/Window";
 import FileCopyIcon from "@mui/icons-material/FileCopy";
 import WatchLaterIcon from "@mui/icons-material/WatchLater";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
