@@ -9,8 +9,8 @@ import "swiper/css/effect-cards";
 
 function Comments() {
   return (
-    <div className="px-10 mt-32">
-      <div className="flex gap-20">
+    <div className="px-4 md:px-10 mt-32">
+      <div className="flex flex-col md:flex-row gap-8 xl:gap-20">
         <div className="flex gap-4 items-center">
           <span className="bg-primaryBlue p-3 rounded-full">
             <svg
@@ -27,16 +27,16 @@ function Comments() {
             </svg>
           </span>
           <div>
-            <h4 className="font-bold text-primaryBlue text-[28px]">
+            <h4 className="font-bold text-primaryBlue text-xl xs:text-[28px]">
               در مورد نابغه چه میشنویم؟
             </h4>
-            <p className="text-lg text-gray-700 w-96">
+            <p className="xs:text-lg text-gray-700 xl:w-96 mt-2">
               این‌ها، بخش خیلی کوچکی از نظراتی هستند که افراد مختلف در مورد
               نابغه دارند.
             </p>
           </div>
         </div>
-        <div className="w-[550px] h-full">
+        <div className="w-9/12 md:w-1/2 xl:w-[550px] mx-auto h-full">
           <Swiper
             effect={"cards"}
             grabCursor={true}
@@ -45,7 +45,7 @@ function Comments() {
               delay: 3000,
               disableOnInteraction: false,
             }}
-            className="w-full h-full"
+            className="w-[90%] h-full"
           >
             <SwiperSlide>
               <div className="border rounded-2xl p-6 bg-white">

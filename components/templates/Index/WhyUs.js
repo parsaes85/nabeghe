@@ -2,11 +2,11 @@ import React from "react";
 
 function WhyUs() {
   return (
-    <div className="mt-8 px-10">
+    <div className="mt-8 px-4 md:px-10">
       <div className="font-bold text-xl -mb-6 z-10 relative bg-white border rounded-2xl py-2 px-10 w-fit mx-auto">
         چرا آکادمی نابغه؟
       </div>
-      <div className="bg-gray-100 rounded-2xl pb-10 pt-14 flex flex-wrap gap-10 justify-center">
+      <div className="bg-gray-100 rounded-2xl pb-10 pt-14 px-6 flex flex-wrap gap-10 justify-center">
         <div className="text-green-600 flex flex-col items-center">
           <span className="bg-white rounded-full p-6 mb-2">
             <svg

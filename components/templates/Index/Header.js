@@ -4,8 +4,8 @@ import Link from "next/link";
 
 function Header() {
   return (
-    <div className="px-10 mt-28">
-      <div className="w-full bg-gradient-to-r from-white to-gray-100 rounded-2xl flex justify-between items-center gap-6 py-20 px-32">
+    <div className="px-4 md:px-10 mt-28">
+      <div className="w-full bg-gradient-to-r from-white to-gray-100 rounded-2xl flex flex-col-reverse md:flex-row justify-between items-center gap-6 py-20 px-4 sm:px-20 md:px-6 lg:px-32">
         <div className="space-y-4">
           <div className="flex items-center gap-2 text-sm">
             <p className="bg-primaryBlue rounded-full text-white px-3">
@@ -14,7 +14,7 @@ function Header() {
             <p className="text-primaryBlue">به زودی :)</p>
           </div>
           <div>
-            <h2 className="text-[50px] font-bold leading-[56px] mb-2">
+            <h2 className="text-3xl sm:text-[50px] font-bold sm:leading-[56px] mb-2">
               داستان برنامه‌نویس شدنت از اینجا شروع میشه!
             </h2>
             <p className="text-gray-600">
@@ -30,7 +30,7 @@ function Header() {
           </button>
         </div>
         <div>
-          <img src="/images/home-banner.png" alt="" className="max-w-[288px]" />
+          <img src="/images/home-banner.png" alt="" className="md:max-w-[288px]" />
         </div>
       </div>
     </div>

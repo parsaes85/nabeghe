@@ -9,7 +9,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 
 function Footer() {
   return (
-    <div className="px-10 pb-10">
+    <div className="px-4 md:px-10 pb-10">
       <div className="flex items-center gap-2">
         <div className="h-0.5 flex-1 bg-gray-100"></div>
         <button className="text-gray-700 bg-gray-100 rounded-full px-4 py-2.5 flex gap-2 text-sm">
@@ -20,10 +20,10 @@ function Footer() {
         </button>
       </div>
       <div className="grid grid-cols-5 gap-6 pt-10 pb-8">
-        <Link href="/" className="col-span-2">
+        <Link href="/" className="col-span-5 md:col-span-2">
           <img src="/images/logo.png" alt="" />
         </Link>
-        <div className=" col-span-3 flex gap-10">
+        <div className="col-span-5 md:col-span-3 flex flex-col xs:flex-row gap-10">
           <div className="flex items-center gap-4">
             <span className="bg-gray-100 rounded-full py-3 px-3.5 text-gray-600">
               <LocalPhoneIcon fontSize="small" />
@@ -45,7 +45,7 @@ function Footer() {
         </div>
       </div>
       <div className="grid grid-cols-5 items-start gap-6">
-        <div className="col-span-2 bg-gray-100 rounded-3xl px-6 pb-8 pt-7">
+        <div className="col-span-5 md:col-span-2 bg-gray-100 rounded-3xl px-6 pb-8 pt-7">
           <h3 className="font-bold text-lg mb-3 pr-2">درباره</h3>
           <p className="text-gray-600 text-justify leading-5">
             نابغه یکی از پرتلاش‌ترین و بروزترین وبسایت های آموزشی در سطح ایران
@@ -54,7 +54,7 @@ function Footer() {
             برنامه نویسان ایرانی به بهترین برنامه نویسان جهان هدف ماست.
           </p>
         </div>
-        <div>
+        <div className="col-span-5 sm:col-span-2 md:col-span-1">
           <h3 className="font-bold text-lg mb-3 pr-2">لینک های مفید</h3>
           <ul className="text-gray-600 space-y-0.5">
             <li>
@@ -71,7 +71,7 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div className="col-span-2">
+        <div className="col-span-5 sm:col-span-3 md:col-span-2">
           <h3 className="font-bold text-lg mb-3 pr-2">خبرنامه</h3>
           <p className="text-gray-600">
             برای اطلاع از جدیدترین اخبار و جشنوراه‌های تخفیفی نابغه ایمیل خود را

@@ -5,13 +5,12 @@ import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import CourseBox from "@/components/modules/CourseBox";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
 
 function LatestCourses() {
   return (
-    <div className="px-10 mt-16">
+    <div className="px-4 md:px-10 mt-16">
       <div className="flex items-center rounded-2xl justify-between bg-gradient-to-r from-white to-gray-100 px-6 py-4">
         <div className="flex gap-4 items-center">
           <span className="bg-primaryBlue p-3 rounded-full">
@@ -29,28 +28,35 @@ function LatestCourses() {
             </svg>
           </span>
           <div>
-            <h4 className="font-bold text-primaryBlue text-[28px]">
+            <h4 className="font-bold text-primaryBlue text-xl xs:text-[28px]">
               آخرین دوره های
             </h4>
-            <p className="text-xl">منتشر شده</p>
+            <p className="text-lg xs:text-xl">منتشر شده</p>
           </div>
         </div>
         <button className="text-black bg-gray-100 rounded-full">
-          <Link href="/courses" className="flex items-center gap-1 px-4 py-2.5">
-            <p className="-mt-0.5">مشاهده همه</p>
+          <Link href="/courses" className="flex items-center gap-1 px-3 sm:px-4 py-2.5">
+            <p className="-mt-0.5 hidden sm:block">مشاهده همه</p>
             <ArrowOutwardIcon className="-rotate-90" fontSize="small" />
           </Link>
         </button>
       </div>
       <div className="mt-8">
         <Swiper
-          navigation={true}
-          modules={[Navigation, Autoplay]}
-          slidesPerView={3}
+          modules={[Autoplay]}
+          slidesPerView={1}
           spaceBetween={20}
           autoplay={{
             delay: 2500,
             disableOnInteraction: false,
+          }}
+          breakpoints={{
+            992: {
+              slidesPerView: 3
+            },
+            596: {
+              slidesPerView: 2
+            }
           }}
           className="w-full h-full"
         >

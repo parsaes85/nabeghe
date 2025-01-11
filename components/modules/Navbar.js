@@ -4,16 +4,20 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
+import MenuIcon from "@mui/icons-material/Menu";
 
 function Navbar() {
   return (
-    <div className="border-b px-10 py-4 fixed z-40 top-0 right-0 w-full bg-white bg-opacity-[0.98] backdrop-blur-md">
+    <div className="border-b px-4 md:px-10 py-4 fixed z-40 top-0 right-0 w-full bg-white bg-opacity-[0.98] backdrop-blur-md">
       <div className="flex justify-between">
-        <div className="flex gap-6 items-center">
+        <div className="flex gap-3 lg:gap-6 items-center">
+          <span className="bg-gray-100 p-2 rounded-full lg:hidden">
+            <MenuIcon />
+          </span>
           <Link href="/">
             <img src="/images/logo.png" alt="" />
           </Link>
-          <ul className="flex gap-6">
+          <ul className="hidden lg:flex gap-6">
             <li className="group/subMenu relative">
               <div className="flex gap-1.5 text-gray-600">
                 دسته بندی آموزشها
@@ -91,26 +95,28 @@ function Navbar() {
           </ul>
         </div>
         <div className="flex items-center gap-4">
-          <span className="bg-gray-100 text-gray-700 p-2 rounded-full">
+          <span className="bg-gray-100 text-gray-700 p-2 rounded-full hidden lg:block">
             <SearchIcon />
           </span>
           <span className="bg-gray-100 text-gray-700 p-2 rounded-full">
             <ShoppingCartOutlinedIcon />
           </span>
-          <span className="bg-gray-100 text-gray-700 p-2 rounded-full">
-            <PersonOutlineOutlinedIcon />
-          </span>
-          <div className="flex items-center gap-2">
-            <div className="text-sm">
-              <p>جلال بهرامی‌راد</p>
-              <p className="text-gray-500">خوش آمدید</p>
-            </div>
-            <span>
-              <ArrowForwardIosIcon
-                fontSize="small"
-                className="rotate-90 text-gray-600"
-              />
+          <div className="flex gap-1 sm:gap-3">
+            <span className="bg-gray-100 text-gray-700 p-2 rounded-full">
+              <PersonOutlineOutlinedIcon />
             </span>
+            <div className="flex items-center gap-2">
+              <div className="text-sm hidden xs:block">
+                <p>جلال بهرامی‌راد</p>
+                <p className="text-gray-500">خوش آمدید</p>
+              </div>
+              <span>
+                <ArrowForwardIosIcon
+                  fontSize="small"
+                  className="rotate-90 text-gray-600"
+                />
+              </span>
+            </div>
           </div>
         </div>
       </div>

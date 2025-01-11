@@ -7,8 +7,12 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: "480px",
+        "2xs": "390px",
+      },
       colors: {
-        primaryBlue: "#1d4ed8"
+        primaryBlue: "#1d4ed8",
       },
       fontFamily: {
         Yekan: ["Yekan"],

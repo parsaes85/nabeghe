@@ -3,8 +3,8 @@ import React from "react";
 
 function Articles() {
   return (
-    <div className="px-10 mt-32 mb-24">
-      <div className="flex justify-between items-center gap-6 p-10 bg-gradient-to-r from-white to-gray-100 rounded-2xl">
+    <div className="px-4 md:px-10 mt-32 mb-24">
+      <div className="flex flex-col lg:flex-row justify-between lg:items-center gap-6 p-4 sm:p-10 bg-gradient-to-r from-white to-gray-100 rounded-2xl">
         <div className="flex gap-4 items-start">
           <span className="bg-primaryBlue p-3 rounded-full">
             <svg
@@ -21,10 +21,10 @@ function Articles() {
             </svg>
           </span>
           <div>
-            <h4 className="font-bold text-primaryBlue text-[28px] w-11/12 leading-8">
+            <h4 className="font-bold text-primaryBlue text-xl xs:text-[28px] xs:w-11/12 xs:leading-8">
               از گوشه و اطراف دنیای برنامه‌نویسی
             </h4>
-            <p className="text-lg text-gray-700 w-80 mt-3">
+            <p className="xs:text-lg text-gray-700 mt-3">
               نوشتن کار جالبیه که از هزاران سال همراه ما بوده و کمک کرده تا
               همیشه به روز باشیم، ما در نابغه فضای رو به شکلی آماده کردیم تا شما
               بتونید ایده‌ها و مطالب جالب حوزه برنامه‌نویسی رو در اختیار هزاران
@@ -32,8 +32,8 @@ function Articles() {
             </p>
           </div>
         </div>
-        <div className="flex gap-5 mt-8">
-          <div className="space-y-5 -mt-8">
+        <div className="flex flex-col sm:flex-row gap-5 mt-8">
+          <div className="space-y-5 -mt-8 mb-8 sm:mb-0">
             <ArticleBox />
             <ArticleBox />
           </div>
