@@ -8,6 +8,7 @@ import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
+import { Close } from "@mui/icons-material";
 
 const AntSwitch = styled(Switch)(({ theme }) => ({
   width: 32,
@@ -109,28 +110,34 @@ function BpRadio(props) {
   );
 }
 
-function Filters() {
+function Filters({ setIsFiltersSidebarOpen }) {
   return (
-    <div className="sticky top-24 space-y-3 text-[15px]">
+    <div className="absolute top-0 right-0 w-80 h-screen p-4 overflow-auto md:p-0 md:h-auto md:w-auto md:overflow-hidden md:sticky md:top-24 space-y-3 text-[15px] bg-white">
+      <div className="flex justify-between items-center mb-8 md:hidden">
+        <p className="text-gray-900 text-[17px]">فیلتر دوره ها</p>
+        <span onClick={() => setIsFiltersSidebarOpen(false)}>
+          <Close />
+        </span>
+      </div>
       <div>
         <h4 className="font-bold text-gray-900 mb-2.5">جستجوی دوره</h4>
         <div className="relative">
           <input
             type="text"
             placeholder="عنوان دوره..."
-            className="bg-gray-100 rounded-xl px-3 py-2.5 w-full"
+            className="bg-gray-100 rounded-2xl px-3 py-2.5 w-full"
           />
           <span className="absolute left-3 top-2 text-gray-500">
             <SearchIcon />
           </span>
         </div>
       </div>
-      <div className="bg-gray-100 rounded-xl px-3 py-2.5 flex justify-between items-center cursor-pointer">
+      <div className="bg-gray-100 rounded-2xl px-3 py-2.5 flex justify-between items-center cursor-pointer">
         <h4 className="font-bold text-gray-900">درحال برگزاری</h4>
         <AntSwitch defaultChecked inputProps={{ "aria-label": "ant design" }} />
       </div>
       <div>
-        <div className="bg-gray-100 rounded-xl px-3 py-2.5 flex justify-between items-center cursor-pointer text-gray-800 hover:text-primaryBlue transition-all">
+        <div className="bg-gray-100 rounded-2xl px-3 py-2.5 flex justify-between items-center cursor-pointer text-gray-800 hover:text-primaryBlue transition-all">
           <div className="flex gap-1.5 items-center">
             <span>
               <StarBorderIcon />
@@ -141,7 +148,7 @@ function Filters() {
             <ArrowForwardIosIcon fontSize="small" className="rotate-90" />
           </span>
         </div>
-        <div className="bg-gray-100 rounded-xl mt-2 py-1">
+        <div className="bg-gray-100 rounded-2xl mt-2 py-1">
           <RadioGroup
             defaultValue="all"
             aria-labelledby="demo-customized-radios"
@@ -173,7 +180,7 @@ function Filters() {
         </div>
       </div>
       <div className="border-t pt-3">
-        <div className="bg-gray-100 rounded-xl px-3 py-2.5 flex justify-between items-center cursor-pointer text-gray-800 hover:text-primaryBlue transition-all">
+        <div className="bg-gray-100 rounded-2xl px-3 py-2.5 flex justify-between items-center cursor-pointer text-gray-800 hover:text-primaryBlue transition-all">
           <div className="flex gap-1.5 items-center">
             <span>
               <GridViewOutlinedIcon fontSize="small" />
@@ -184,7 +191,7 @@ function Filters() {
             <ArrowForwardIosIcon fontSize="small" className="rotate-90" />
           </span>
         </div>
-        <div className="bg-gray-100 rounded-xl mt-2 py-1">
+        <div className="bg-gray-100 rounded-2xl mt-2 py-1">
           <RadioGroup
             defaultValue="all"
             aria-labelledby="demo-customized-radios"
