@@ -6,7 +6,7 @@ function CommentRow() {
   return (
     <div>
       <div className="border py-4 px-6 rounded-3xl">
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
           <div className="flex items-center gap-2">
             <img
               src="/images/teacher-img.jpeg"
@@ -18,7 +18,7 @@ function CommentRow() {
               <p className="text-sm text-gray-600">۲ هفته پیش</p>
             </div>
           </div>
-          <div className="flex gap-2 items-center">
+          <div className="flex gap-2 items-center self-end">
             <button className="flex items-center gap-1 rounded-full text-sm bg-gray-100 text-gray-600 py-2 pl-3 pr-4 hover:text-primaryBlue transition-all">
               <span>پاسخ</span>
               <span>
@@ -46,7 +46,7 @@ function CommentRow() {
       <div className="pr-8">
         <div className="pt-3 pr-8 border-r space-y-3">
           <div className="border py-4 px-6 rounded-3xl">
-            <div className="flex justify-between items-center">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
               <div className="flex items-center gap-2">
                 <img
                   src="/images/teacher-img.jpeg"
@@ -58,7 +58,7 @@ function CommentRow() {
                   <p className="text-sm text-gray-600">۲ هفته پیش</p>
                 </div>
               </div>
-              <div className="flex gap-2 items-center">
+              <div className="flex gap-2 items-center self-end">
                 <button className="flex items-center gap-1 rounded-full text-sm bg-gray-100 text-gray-600 py-2 pl-3 pr-4 hover:text-primaryBlue transition-all">
                   <span>پاسخ</span>
                   <span>
@@ -84,7 +84,7 @@ function CommentRow() {
             </div>
           </div>
           <div className="border py-4 px-6 rounded-3xl">
-            <div className="flex justify-between items-center">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
               <div className="flex items-center gap-2">
                 <img
                   src="/images/teacher-img.jpeg"
@@ -96,7 +96,7 @@ function CommentRow() {
                   <p className="text-sm text-gray-600">۲ هفته پیش</p>
                 </div>
               </div>
-              <div className="flex gap-2 items-center">
+              <div className="flex gap-2 items-center self-end">
                 <button className="flex items-center gap-1 rounded-full text-sm bg-gray-100 text-gray-600 py-2 pl-3 pr-4 hover:text-primaryBlue transition-all">
                   <span>پاسخ</span>
                   <span>

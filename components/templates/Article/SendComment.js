@@ -5,8 +5,8 @@ function SendComment() {
   return (
     <div className="border rounded-3xl px-6 py-4">
       <h6 className="font-bold text-[15px]">ارسال دیدگاه یا پرسش</h6>
-      <div className="flex justify-between items-center mt-5">
-        <div className="flex items-center gap-3">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mt-5">
+        <div className="flex items-center flex-wrap gap-3">
           <p>جلال بهرامی راد</p>
           <span className="w-1 h-1 bg-gray-200 rounded-full"></span>
           <p className="text-sm text-gray-700">در پاسخ به</p>
@@ -23,7 +23,7 @@ function SendComment() {
             </div>
           </div>
         </div>
-        <button className="text-red-600">لغو پاسخ</button>
+        <button className="text-red-600 self-end sm:self-auto">لغو پاسخ</button>
       </div>
       <textarea
         rows="6"
