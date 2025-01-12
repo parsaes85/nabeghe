@@ -8,8 +8,8 @@ function Course() {
   return (
     <>
       <Navbar />
-      <div className="mt-28 mb-24 px-10">
-        <div className="flex gap-5">
+      <div className="mt-28 mb-24 px-4 lg:px-10">
+        <div className="flex flex-col md:flex-row gap-20 md:gap-5">
           <div className="flex-[2]">
             <MainColumn />
           </div>

@@ -12,7 +12,7 @@ function HeaderSection() {
         <li className="list-disc text-green-600">تکمیل شده</li>
         <h1
           href="/course/1"
-          className="block font-bold hover:text-primaryBlue transition-all text-2xl mt-1 mb-2"
+          className="block font-bold hover:text-primaryBlue transition-all text-xl sm:text-xl mt-1 mb-2"
         >
           دوره پروژه محور React و Next
         </h1>
@@ -22,7 +22,7 @@ function HeaderSection() {
           دهیم.
         </p>
       </div>
-      <div className="mt-5 flex gap-5">
+      <div className="mt-5 grid grid-cols-2 lg:grid-cols-4 gap-5">
         <div className="border bg-gray-100 flex flex-col items-center rounded-2xl py-3 flex-1">
           <span className="bg-white rounded-full text-primaryBlue px-4 py-3.5">
             <WatchLaterIcon fontSize="small" />
