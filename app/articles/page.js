@@ -7,7 +7,7 @@ function Articles() {
   return (
     <>
       <Navbar />
-      <div className="mt-28 px-10">
+      <div className="mt-[105px] px-4 md:px-10">
         <div className="flex gap-4 items-center">
           <span className="bg-primaryBlue p-3 rounded-full">
             <svg
@@ -24,10 +24,10 @@ function Articles() {
             </svg>
           </span>
           <div>
-            <h4 className="font-bold text-primaryBlue text-[28px]">
+            <h4 className="font-bold text-primaryBlue text-xl xs:text-[28px]">
               مقالات آموزشی{" "}
             </h4>
-            <p className="text-sm text-gray-700">
+            <p className="text-sm text-gray-700 mt-2">
               از گوشه و اطراف دنیای برنامه‌نویسی
             </p>
           </div>

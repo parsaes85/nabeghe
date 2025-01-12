@@ -8,6 +8,7 @@ import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
+import { Close } from "@mui/icons-material";
 
 const BpIcon = styled("span")(({ theme }) => ({
   borderRadius: "50%",
@@ -62,9 +63,15 @@ function BpRadio(props) {
   );
 }
 
-function Filters() {
+function Filters({ setIsFiltersSidebarOpen }) {
   return (
-    <div className="sticky top-24 space-y-3 text-[15px]">
+    <div className="absolute top-0 right-0 w-80 h-screen p-4 overflow-auto md:p-0 md:h-auto md:w-auto md:overflow-hidden md:sticky md:top-24 space-y-3 text-[15px] bg-white">
+      <div className="flex justify-between items-center mb-8 md:hidden">
+        <p className="text-gray-900 text-[17px]">فیلتر مقالات</p>
+        <span onClick={() => setIsFiltersSidebarOpen(false)}>
+          <Close />
+        </span>
+      </div>
       <div>
         <h4 className="font-bold text-gray-900 mb-2.5">تگ های محبوب</h4>
         <div className="flex gap-2 flex-wrap">
