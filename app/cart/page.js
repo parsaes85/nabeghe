@@ -8,8 +8,8 @@ function Cart() {
   return (
     <>
       <Navbar />
-      <div className="mt-28 mb-24 px-10">
-        <div className="flex gap-5">
+      <div className="mt-28 mb-24 px-4 md:px-10">
+        <div className="flex flex-col md:flex-row md:gap-5 gap-20">
           <div className="flex-[2]">
             <CartCourses />
           </div>

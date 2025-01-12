@@ -21,10 +21,10 @@ function CartCourses() {
             </svg>
           </span>
           <div>
-            <h4 className="font-bold text-primaryBlue text-[28px]">
+            <h4 className="font-bold text-primaryBlue text-xl xs:text-[28px]">
               سبد خرید شما
             </h4>
-            <p className="text-gray-600">۲ دوره به سبد اضافه کرده اید</p>
+            <p className="text-sm xs:text-base text-gray-600 mt-2">۲ دوره به سبد اضافه کرده اید</p>
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@ import CloseIcon from "@mui/icons-material/Close";
 
 function CartCourseBox() {
   return (
-    <div className="flex items-start gap-8 border-b border-dashed pb-12">
+    <div className="flex flex-col sm:flex-row items-start gap-8 border-b border-dashed pb-12">
       <div className="flex-1 relative">
         <Link href="/course/2">
           <img src="images/01.jpg" alt="" className=" rounded-3xl" />
@@ -17,7 +17,7 @@ function CartCourseBox() {
           <CloseIcon />
         </button>
       </div>
-      <div className="flex-[2] bg-gradient-to-b from-gray-100 to-white px-5 rounded-3xl">
+      <div className="flex-1 w-full sm:w-auto sm:flex-[2] bg-gradient-to-b from-gray-100 to-white px-5 rounded-3xl">
         <div className="bg-white rounded-b-3xl p-5 space-y-1 text-[15px]">
           <li className="list-disc text-green-600">تکمیل شده</li>
           <Link
