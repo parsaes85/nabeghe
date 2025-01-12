@@ -2,7 +2,7 @@ import React from "react";
 
 function Form() {
   return (
-    <div className="bg-gradient-to-b from-gray-100 to-white rounded-2xl p-5 pt-0 w-[420px]">
+    <div className="bg-gradient-to-b from-gray-100 to-white rounded-2xl p-5 pt-0 w-full sm:w-[420px]">
       <div className="bg-white rounded-b-3xl px-6 py-4">
         <h5 className="font-bold text-[17px]">فرم تماس با ما</h5>
       </div>

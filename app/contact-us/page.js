@@ -12,16 +12,16 @@ function Contact_Us() {
   return (
     <>
       <Navbar />
-      <div className="mt-28 px-10">
+      <div className="mt-28 px-4 md:px-10">
         <div>
-          <h4 className="font-bold text-[28px]">تماس با ما</h4>
+          <h4 className="font-bold text-2xl xs:text-[28px]">تماس با ما</h4>
           <p className="text-sm text-gray-700">
             در این صفحه میتوانید اطلاعات ارتباطی نابغه را مشاهده کنید.
           </p>
         </div>
       </div>
-      <div className="px-10 mt-10 mb-24">
-        <div className="flex items-start justify-between">
+      <div className="px-4 md:px-10 mt-10 mb-24">
+        <div className="flex flex-col sm:flex-row items-start justify-between gap-y-10">
           <div className="space-y-4">
             <div>
               <h3 className="font-bold text-lg mb-3 pr-2">شبکه های اجتماعی</h3>
