@@ -7,12 +7,8 @@ async function Login_Register({ searchParams }) {
   const { isLogin } = await searchParams;
 
   return (
-    <div
-      className={`w-full h-screen flex justify-center items-center ${
-        !Number(isLogin) && "my-16"
-      }`}
-    >
-      <div className="w-96 mx-auto bg-gradient-to-b from-gray-100 to-white rounded-3xl">
+    <div>
+      <div className="w-11/12 xs:w-96 mx-auto my-16 bg-gradient-to-b from-gray-100 to-white rounded-3xl">
         <div className="px-6">
           <div className="bg-white w-full rounded-b-3xl px-4 py-5">
             <Link href="/">
@@ -20,11 +16,13 @@ async function Login_Register({ searchParams }) {
             </Link>
           </div>
           <div>
-            <h5 className="font-bold mt-4 mb-3 pr-1 text-lg">{Number(isLogin) ? "ورود" : "ثبت نام"}</h5>
+            <h5 className="font-bold mt-4 mb-3 pr-1 text-lg">
+              {Number(isLogin) ? "ورود" : "ثبت نام"}
+            </h5>
             {Number(isLogin) ? <LoginForm /> : <RegisterForm />}
           </div>
         </div>
-        <div className="text-sm mt-10 bg-gray-100 rounded-xl text-center py-4 text-gray-600">
+        <div className="text-sm mt-10 bg-gray-100 rounded-xl text-center py-4 px-2 text-gray-600">
           <p>
             ورود شما به معنای پذیرش{" "}
             <Link
