@@ -8,7 +8,7 @@ function ArticlesList({ setIsFiltersSidebarOpen }) {
     <>
       <div className="flex gap-4">
         <div className="flex items-center gap-4">
-          <span className="text-gray-600 text-sm flex items-center gap-1">
+          <span className="text-gray-600 text-sm hidden sm:flex items-center gap-1">
             <TuneIcon fontSize="small" /> مرتب سازی:
           </span>
           <div>
