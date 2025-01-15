@@ -4,20 +4,16 @@ import FileCopyIcon from "@mui/icons-material/FileCopy";
 import WatchLaterIcon from "@mui/icons-material/WatchLater";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import CloseIcon from "@mui/icons-material/Close";
 
-function CartCourseBox() {
+function WishlistCourseBox() {
   return (
-    <div className="flex flex-col sm:flex-row items-start gap-8 border-b border-dashed pb-12">
+    <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row items-start gap-8 border-b border-dashed pb-12">
       <div className="flex-1 relative">
         <Link href="/course/2">
           <img src="/images/01.jpg" alt="" className=" rounded-3xl" />
         </Link>
-        <button className="absolute right-1/2 translate-x-1/2 -bottom-5 text-white bg-red-500 rounded-full p-2.5 hover:bg-red-600 transition-all">
-          <CloseIcon />
-        </button>
       </div>
-      <div className="flex-1 w-full sm:w-auto sm:flex-[2] bg-gradient-to-b from-gray-100 to-white px-5 rounded-3xl">
+      <div className="flex-1 w-full sm:w-auto sm:flex-[2] md:flex-1 md:w-full lg:w-auto lg:flex-[2] bg-gradient-to-b from-gray-100 to-white px-5 rounded-3xl">
         <div className="bg-white rounded-b-3xl p-5 space-y-1 text-[15px]">
           <li className="list-disc text-green-600">تکمیل شده</li>
           <Link
@@ -73,7 +69,7 @@ function CartCourseBox() {
               <ArrowOutwardIcon className="-rotate-90" fontSize="small" />
             </Link>
           </button>
-          <span className="bg-gray-100 text-gray-600 rounded-full py-2 px-3 hover:text-red-500 transition-all cursor-pointer">
+          <span className="bg-gray-100 rounded-full py-2 px-3 text-red-500 transition-all cursor-pointer">
             <FavoriteIcon fontSize="small" />
           </span>
         </div>
@@ -82,4 +78,4 @@ function CartCourseBox() {
   );
 }
 
-export default CartCourseBox;
+export default WishlistCourseBox;
