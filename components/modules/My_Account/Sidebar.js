@@ -1,7 +1,11 @@
-import Link from "next/link";
+"use client";
 import React from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 function Sidebar() {
+  const pathName = usePathname();
+  console.log(pathName);
   return (
     <div className="sticky top-24">
       <div className="flex items-center gap-3">
@@ -19,7 +23,9 @@ function Sidebar() {
         <div>
           <Link
             href="/my-account/dashboard"
-            className="flex items-center gap-3 rounded-full px-4 py-3 bg-primaryBlue text-white transition-all hover:bg-primaryBlue hover:text-white"
+            className={`flex items-center gap-3 rounded-full px-4 py-3 bg-white text-gray-600 ${
+              pathName == "/my-account/dashboard" && "bg-[#1d4ed8] text-white"
+            } transition-all hover:bg-primaryBlue hover:text-white`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +45,9 @@ function Sidebar() {
         <div>
           <Link
             href="/my-account/courses"
-            className="flex items-center gap-3 rounded-full px-4 py-3 bg-white text-gray-600 transition-all hover:bg-primaryBlue hover:text-white"
+            className={`flex items-center gap-3 rounded-full px-4 py-3 bg-white text-gray-600 transition-all hover:bg-primaryBlue hover:text-white ${
+              pathName == "/my-account/courses" && "bg-[#1d4ed8] text-white"
+            }`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +69,9 @@ function Sidebar() {
         <div>
           <Link
             href="/my-account/wishlist"
-            className="flex items-center gap-3 rounded-full px-4 py-3 bg-white text-gray-600 transition-all hover:bg-primaryBlue hover:text-white"
+            className={`flex items-center gap-3 rounded-full px-4 py-3 bg-white text-gray-600 transition-all hover:bg-primaryBlue hover:text-white ${
+              pathName == "/my-account/wishlist" && "bg-[#1d4ed8] text-white"
+            }`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -83,7 +93,9 @@ function Sidebar() {
         <div>
           <Link
             href="/my-account/financial"
-            className="flex items-center gap-3 rounded-full px-4 py-3 bg-white text-gray-600 transition-all hover:bg-primaryBlue hover:text-white"
+            className={`flex items-center gap-3 rounded-full px-4 py-3 bg-white text-gray-600 transition-all hover:bg-primaryBlue hover:text-white ${
+              pathName == "/my-account/financial" && "bg-[#1d4ed8] text-white"
+            }`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +117,9 @@ function Sidebar() {
         <div>
           <Link
             href="/my-account/comments"
-            className="flex items-center gap-3 rounded-full px-4 py-3 bg-white text-gray-600 transition-all hover:bg-primaryBlue hover:text-white"
+            className={`flex items-center gap-3 rounded-full px-4 py-3 bg-white text-gray-600 transition-all hover:bg-primaryBlue hover:text-white ${
+              pathName == "/my-account/comments" && "bg-[#1d4ed8] text-white"
+            }`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -127,7 +141,9 @@ function Sidebar() {
         <div>
           <Link
             href="/my-account/notifications"
-            className="flex items-center gap-3 rounded-full px-4 py-3 bg-white text-gray-600 transition-all hover:bg-primaryBlue hover:text-white"
+            className={`flex items-center gap-3 rounded-full px-4 py-3 bg-white text-gray-600 transition-all hover:bg-primaryBlue hover:text-white ${
+              pathName == "/my-account/notifications" && "bg-[#1d4ed8] text-white"
+            }`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -148,8 +164,10 @@ function Sidebar() {
         </div>
         <div>
           <Link
-            href="#"
-            className="flex items-center gap-3 rounded-full px-4 py-3 bg-white text-gray-600 transition-all hover:bg-primaryBlue hover:text-white"
+            href="/my-account/edit-profile"
+            className={`flex items-center gap-3 rounded-full px-4 py-3 bg-white text-gray-600 transition-all hover:bg-primaryBlue hover:text-white ${
+              pathName == "/my-account/edit-profile" && "bg-[#1d4ed8] text-white"
+            }`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
