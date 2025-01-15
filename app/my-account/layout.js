@@ -8,11 +8,11 @@ function MyAccountLayout({ children }) {
     <>
       <Navbar />
       <div className="mt-[105px] px-4 md:px-10">
-        <div className="flex flex-col lg:flex-row">
+        <div className="flex gap-6 flex-col md:flex-row">
           <div className="flex-1 relative">
             <Sidebar />
           </div>
-          <div className="flex-[3.3]">{children}</div>
+          <div className="flex-[2] lg:flex-[3.3]">{children}</div>
         </div>
       </div>
       <Footer />
