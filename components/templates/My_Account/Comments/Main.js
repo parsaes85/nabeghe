@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import CourseBox from "@/components/modules/My_Account/CourseBox";
 import { DescriptionOutlined, School } from "@mui/icons-material";
+import CommentBox from "./CommentBox";
 
 function Main() {
   const [status, setStatus] = useState("courses");
@@ -33,9 +33,9 @@ function Main() {
           مقالات آموزشی
         </div>
       </div>
-      <div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        <CourseBox />
-        <CourseBox />
+      <div className="mt-5 space-y-12">
+        <CommentBox />
+        <CommentBox />
       </div>
     </div>
   );
