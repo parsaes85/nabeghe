@@ -1,10 +1,16 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 function Sidebar() {
   const pathName = usePathname();
+
+  useEffect(() => {
+    scrollTo({
+      top: 0,
+    });
+  }, [pathName]);
 
   return (
     <div className="sticky top-24">
