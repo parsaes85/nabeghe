@@ -57,7 +57,7 @@ function Comments() {
 
                 <div className="flex justify-center items-center gap-3 mt-5">
                   <img
-                    src="images/teacher-img.jpeg"
+                    src="/images/teacher-img.jpeg"
                     alt=""
                     className="rounded-full w-10"
                   />
@@ -80,7 +80,7 @@ function Comments() {
 
                 <div className="flex justify-center items-center gap-3 mt-5">
                   <img
-                    src="images/teacher-img.jpeg"
+                    src="/images/teacher-img.jpeg"
                     alt=""
                     className="rounded-full w-10"
                   />
@@ -103,7 +103,7 @@ function Comments() {
 
                 <div className="flex justify-center items-center gap-3 mt-5">
                   <img
-                    src="images/teacher-img.jpeg"
+                    src="/images/teacher-img.jpeg"
                     alt=""
                     className="rounded-full w-10"
                   />

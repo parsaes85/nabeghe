@@ -8,7 +8,7 @@ function ArticleBox() {
     <div className="bg-white p-4 rounded-2xl shadow-md">
       <div className="relative">
         <Link href="/article/2">
-          <img src="images/03.jpg" alt="" className="w-full rounded-2xl" />
+          <img src="/images/03.jpg" alt="" className="w-full rounded-2xl" />
         </Link>
         <span className="absolute left-4 -bottom-3 bg-gray-100 text-gray-600 rounded-full py-2 px-2.5 hover:text-red-500 transition-all cursor-pointer">
           <FavoriteIcon fontSize="small" />
@@ -24,7 +24,7 @@ function ArticleBox() {
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-2">
             <img
-              src="images/teacher-img.jpeg"
+              src="/images/teacher-img.jpeg"
               alt=""
               className="rounded-full w-8"
             />

@@ -7,11 +7,19 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
 import Sidebar from "./Sidebar";
-import { Close } from "@mui/icons-material";
+import {
+  AutoAwesomeOutlined,
+  Close,
+  LoginOutlined,
+  PaymentsOutlined,
+  SchoolOutlined,
+  SmsOutlined,
+} from "@mui/icons-material";
 
 function Navbar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isSearchBarShow, setIsSearchBarShow] = useState(false);
+  const [isProfileSubMenuShow, setIsProfileSubMenuShow] = useState(false);
 
   return (
     <>
@@ -122,24 +130,6 @@ function Navbar() {
                   تماس با ما
                 </Link>
               </li>
-              {/* <li className="group relative">
-                <div className="flex gap-1.5 text-gray-600">
-                  لینکهای مفید
-                  <span>
-                    <ArrowForwardIosIcon
-                      fontSize="small"
-                      className="rotate-90"
-                    />
-                  </span>
-                </div>
-                <div className="absolute top-6 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  <ul className="p-4 rounded-md space-y-3 border bg-white shadow-md w-[220px]">
-                    <li className="text-gray-700">مشاهده پروفایل</li>
-                    <li className="text-gray-700">دوره ها</li>
-                    <li className="text-gray-700">مالی</li>
-                  </ul>
-                </div>
-              </li> */}
             </ul>
           </div>
           <div className="flex items-center gap-4">
@@ -158,21 +148,88 @@ function Navbar() {
               </span>
               <ShoppingCartOutlinedIcon />
             </Link>
-            <div className="flex gap-1 sm:gap-3">
-              <span className="bg-gray-100 text-gray-700 p-2 rounded-full">
-                <PersonOutlineOutlinedIcon />
-              </span>
-              <div className="flex items-center gap-2">
-                <div className="text-sm hidden xs:block">
-                  <p>جلال بهرامی‌راد</p>
-                  <p className="text-gray-500">خوش آمدید</p>
-                </div>
-                <span>
-                  <ArrowForwardIosIcon
-                    fontSize="small"
-                    className="rotate-90 text-gray-600"
-                  />
+            <div className="relative">
+              <div
+                className="flex gap-1 sm:gap-3 cursor-pointer"
+                onClick={() => setIsProfileSubMenuShow(!isProfileSubMenuShow)}
+              >
+                <span className="bg-gray-100 text-gray-700 p-2 rounded-full">
+                  <PersonOutlineOutlinedIcon />
                 </span>
+                <div className="flex items-center gap-2">
+                  <div className="text-sm hidden xs:block">
+                    <p>جلال بهرامی‌راد</p>
+                    <p className="text-gray-500">خوش آمدید</p>
+                  </div>
+                  <span>
+                    <ArrowForwardIosIcon
+                      fontSize="small"
+                      className={`transition-all ${
+                        isProfileSubMenuShow ? "-rotate-90" : "rotate-90"
+                      }  text-gray-600`}
+                    />
+                  </span>
+                </div>
+              </div>
+              <div
+                className={`absolute left-0 top-12 ${
+                  !isProfileSubMenuShow && "hidden"
+                }`}
+              >
+                <ul className="p-5 rounded-xl space-y-4 border bg-white text-sm shadow-md w-[220px]">
+                  <li>
+                    <Link
+                      href="/my-account/dashboard"
+                      className="flex items-center gap-2 hover:text-primaryBlue"
+                    >
+                      <span>
+                        <AutoAwesomeOutlined fontSize="small" />
+                      </span>
+                      پیشخوان
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/my-account/courses"
+                      className="flex items-center gap-2 hover:text-primaryBlue"
+                    >
+                      <span>
+                        <SchoolOutlined fontSize="small" />
+                      </span>
+                      دوره ها
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/my-account/financial"
+                      className="flex items-center gap-2 hover:text-primaryBlue"
+                    >
+                      <span>
+                        <PaymentsOutlined fontSize="small" />
+                      </span>
+                      مالی
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/my-account/comments"
+                      className="flex items-center gap-2 hover:text-primaryBlue"
+                    >
+                      <span>
+                        <SmsOutlined fontSize="small" />
+                      </span>
+                      پرسش و دیدگاه ها
+                    </Link>
+                  </li>
+                  <li>
+                    <button className="flex items-center gap-2 text-red-500 hover:text-red-700">
+                      <span>
+                        <LoginOutlined fontSize="small" />
+                      </span>
+                      خروج از حساب
+                    </button>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

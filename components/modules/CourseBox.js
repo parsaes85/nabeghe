@@ -11,7 +11,7 @@ function CourseBox() {
     <div>
       <div className="relative">
         <Link href="/course/2">
-          <img src="images/01.jpg" alt="" className="w-full rounded-3xl" />
+          <img src="/images/01.jpg" alt="" className="w-full rounded-3xl" />
         </Link>
         <Link
           href="#"
@@ -44,7 +44,7 @@ function CourseBox() {
         <div className="flex justify-between items-end mt-1 mb-5">
           <div className="flex items-center gap-3">
             <img
-              src="images/teacher-img.jpeg"
+              src="/images/teacher-img.jpeg"
               alt=""
               className="rounded-full w-10"
             />
