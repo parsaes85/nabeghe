@@ -26,7 +26,7 @@ function CourseBox() {
           <li className="list-disc text-green-600">تکمیل شده</li>
           <Link
             href="/course/1"
-            className="block font-bold hover:text-primaryBlue transition-all"
+            className="font-bold hover:text-primaryBlue transition-all line-clamp-1"
           >
             دوره پروژه محور React و Next
           </Link>
@@ -49,8 +49,8 @@ function CourseBox() {
               className="rounded-full w-10"
             />
             <div className="text-sm">
-              <p className="text-gray-600">مدرس دوره:</p>
-              <Link href="#" className="font-bold">
+              <p className="text-gray-600 line-clamp-1">مدرس دوره:</p>
+              <Link href="#" className="font-bold line-clamp-1">
                 جلال بهرامی راد
               </Link>
             </div>
@@ -59,7 +59,7 @@ function CourseBox() {
             <p className="text-gray-700 line-through tracking-[-0.12em] text-lg text-end -mb-1">
               ۱،۱۹۹،۰۰۰
             </p>
-            <p className="font-bold text-[22px] tracking-[-0.09em]">
+            <p className="font-bold text-[22px] tracking-[-0.09em] whitespace-nowrap">
               ۱،۰۷۹،۰۰۰{" "}
               <span className="font-normal text-gray-600 text-sm tracking-normal">
                 تومان

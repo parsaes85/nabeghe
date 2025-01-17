@@ -17,8 +17,8 @@ function Main() {
             </svg>
           </span>
           <div>
-            <p className="text-sm text-gray-600">باقیمانده اشتراک</p>
-            <p className="font-bold">عضو ویژه نیستید</p>
+            <p className="text-sm text-gray-600 line-clamp-1">باقیمانده اشتراک</p>
+            <p className="font-bold line-clamp-1">عضو ویژه نیستید</p>
           </div>
         </div>
         <div className="flex bg-gray-100 gap-4 items-center p-3 rounded-2xl">
@@ -37,8 +37,8 @@ function Main() {
             </svg>
           </span>
           <div>
-            <p className="text-sm text-gray-600">درحال یادگیری</p>
-            <p className="font-bold">۷ دوره</p>
+            <p className="text-sm text-gray-600 line-clamp-1">درحال یادگیری</p>
+            <p className="font-bold line-clamp-1">۷ دوره</p>
           </div>
         </div>
         <div className="flex bg-gray-100 gap-4 items-center p-3 rounded-2xl">
@@ -57,8 +57,8 @@ function Main() {
             </svg>
           </span>
           <div>
-            <p className="text-sm text-gray-600">امتیازات</p>
-            <p className="font-bold">۸۵,۴۸۰ ستاره</p>
+            <p className="text-sm text-gray-600 line-clamp-1">امتیازات</p>
+            <p className="font-bold line-clamp-1">۸۵,۴۸۰ ستاره</p>
           </div>
         </div>
         <div className="flex bg-gray-100 gap-4 items-center p-3 rounded-2xl">
@@ -73,8 +73,8 @@ function Main() {
             </svg>
           </span>
           <div>
-            <p className="text-sm text-gray-600">موجودی کیف پول</p>
-            <p className="font-bold">۱,۰۷۹,۰۰۰ تومان</p>
+            <p className="text-sm text-gray-600 line-clamp-1">موجودی کیف پول</p>
+            <p className="font-bold line-clamp-1">۱,۰۷۹,۰۰۰ تومان</p>
           </div>
         </div>
       </div>
