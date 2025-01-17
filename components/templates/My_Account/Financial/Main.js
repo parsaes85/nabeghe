@@ -6,9 +6,9 @@ function Main() {
       <h5 className="font-bold text-lg mb-6">تاریخچه تراکنشها</h5>
 
       <div className="relative overflow-x-auto">
-        <table className="min-w-[500px] w-full text-right">
+        <table className="w-full text-right">
           <thead>
-            <tr className="text-gray-600 text-sm border-b [&>*]:py-5 ">
+            <tr className="text-gray-600 text-sm border-b [&>*]:py-5 [&>*]:px-3 whitespace-nowrap">
               <th className="pr-4">شماره پیگیری</th>
               <th>وضعیت</th>
               <th>شرح تراکنش</th>
@@ -17,7 +17,7 @@ function Main() {
             </tr>
           </thead>
           <tbody>
-            <tr className="odd:bg-gray-100 text-sm font-bold [&>*]:py-5 ">
+            <tr className="odd:bg-gray-100 text-sm font-bold [&>*]:py-5 [&>*]:px-3 whitespace-nowrap ">
               <td className="pr-4">۱۰۷۹</td>
               <td>
                 <li className="list-disc text-green-500">موفق</li>

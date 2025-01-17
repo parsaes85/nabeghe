@@ -12,7 +12,7 @@ function MyAccountLayout({ children }) {
           <div className="flex-1 relative">
             <Sidebar />
           </div>
-          <div className="flex-[2] lg:flex-[3.3]">{children}</div>
+          <div className="flex-[2] lg:flex-[3.3] overflow-x-auto">{children}</div>
         </div>
       </div>
       <Footer />
