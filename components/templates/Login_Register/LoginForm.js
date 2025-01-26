@@ -6,19 +6,27 @@ import { useForm } from "react-hook-form";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
+import login from "@/funcs/login";
+import Loader from "@/components/modules/Loader";
 
 function LoginForm() {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [isLoaderPending, setIsLoaderPending] = useState(false);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const router = useRouter();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    setIsLoaderPending(true);
+    login(data, router, setIsLoaderPending);
+  };
 
   return (
     <>
+      {isLoaderPending && <Loader message="لطفا منتظر بمانید ..." />}
       <form className="space-y-3" onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label htmlFor="email" className="text-gray-500">

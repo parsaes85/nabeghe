@@ -20,13 +20,9 @@ function RegisterForm() {
   } = useForm();
   const router = useRouter();
 
-  const handleReset = () => {
-    reset();
-  };
-
   const onSubmit = (data) => {
     setIsLoaderPending(true)
-    registerUser(data, router, handleReset, setIsLoaderPending);
+    registerUser(data, router, setIsLoaderPending);
   };
 
   return (
