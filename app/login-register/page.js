@@ -8,10 +8,10 @@ async function Login_Register({ searchParams }) {
 
   return (
     <div className="w-11/12 xs:w-96 mx-auto my-16">
-      <div className="bg-gradient-to-b from-gray-100 to-white rounded-3xl p-6">
+      <div className="bg-gradient-to-b from-gray-100 to-white rounded-3xl p-6 pt-0">
         <div className="bg-white rounded-b-3xl px-4 py-5">
           <Link href="/">
-            <img src="/images/logo.png" alt="" className="mx-auto" />
+            <img src="/images/logo.png" alt="" />
           </Link>
         </div>
         <div className="mt-4">
