@@ -1,7 +1,9 @@
-function deleteCookie(name) {
-    setCookie(name, "", {
-      'max-age': -1
-    })
-  }
+import setCookie from "./setCookie";
 
-  export default deleteCookie
+function deleteCookie(name) {
+  setCookie(name, "", {
+    "max-age": -1,
+  });
+}
+
+export default deleteCookie;

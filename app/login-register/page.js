@@ -22,20 +22,14 @@ async function Login_Register({ searchParams }) {
         </div>
       </div>
       <p className="text-sm mt-10 bg-gray-100 rounded-xl p-4 text-center text-gray-600">
-        ورود شما به معنای پذیرش
-        <Link
-          href="#"
-          className="hover:underline hover:text-primaryBlue"
-        >
+        ورود شما به معنای پذیرش{" "}
+        <Link href="#" className="hover:underline hover:text-primaryBlue">
           شرایط
-        </Link>
-        و
-        <Link
-          href="#"
-          className="hover:underline hover:text-primaryBlue"
-        >
+        </Link>{" "}
+        و{" "}
+        <Link href="#" className="hover:underline hover:text-primaryBlue">
           قوانین حریم خصوصی
-        </Link>
+        </Link>{" "}
         است.
       </p>
     </div>

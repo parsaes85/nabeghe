@@ -30,16 +30,16 @@ function RegisterForm() {
       {isLoaderPending && <Loader message="لطفا منتظر بمانید ..." />}
       <form className="space-y-3" onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <label htmlFor="fullName" className="text-gray-500">
+          <label htmlFor="fullname" className="text-gray-500">
             نام و نام خانوادگی
           </label>
           <input
             type="text"
-            id="fullName"
+            id="fullname"
             className="w-full border bg-gray-100 rounded-xl outline-none p-2 mt-2"
-            {...register("fullName", { required: true })}
+            {...register("fullname", { required: true })}
           />
-          {errors.fullName?.type === "required" && (
+          {errors.fullname?.type === "required" && (
             <p className="text-red-500 text-xs mr-2">
               نام و نام خانوادگی اجباری است
             </p>
