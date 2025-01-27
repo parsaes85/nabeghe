@@ -1,7 +1,16 @@
+"use client";
+import React, { useEffect, useState } from "react";
+
 import ArticleBox from "@/components/modules/ArticleBox";
-import React from "react";
+import getArticles from "@/funcs/getArticles";
 
 function Articles() {
+  const [articles, setArticles] = useState([]);
+
+  useEffect(() => {
+    getArticles("?_limit=4").then((res) => setArticles(res));
+  }, []);
+
   return (
     <div className="px-4 md:px-10 mt-32 mb-24">
       <div className="flex flex-col lg:flex-row justify-between lg:items-center gap-6 p-4 sm:p-10 bg-gradient-to-r from-white to-gray-100 rounded-2xl">
@@ -34,12 +43,14 @@ function Articles() {
         </div>
         <div className="flex flex-col sm:flex-row gap-5 mt-8">
           <div className="space-y-5 -mt-8 mb-8 sm:mb-0">
-            <ArticleBox />
-            <ArticleBox />
+            {articles.slice(0, 2).map((article) => (
+              <ArticleBox key={article.id} {...article} />
+            ))}
           </div>
           <div className="space-y-5">
-            <ArticleBox />
-            <ArticleBox />
+            {articles.slice(2, 4).map((article) => (
+              <ArticleBox key={article.id} {...article} />
+            ))}
           </div>
         </div>
       </div>
