@@ -1,14 +1,21 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
-import CourseBox from "@/components/modules/CourseBox";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
+import CourseBox from "@/components/modules/CourseBox";
+import getCourses from "@/funcs/getCourses";
+
 function LatestCourses() {
+  const [courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    getCourses("?_limit=6").then((res) => setCourses(res));
+  }, []);
+
   return (
     <div className="px-4 md:px-10 mt-16">
       <div className="flex items-center rounded-2xl justify-between bg-gradient-to-r from-white to-gray-100 px-6 py-4">
@@ -35,7 +42,10 @@ function LatestCourses() {
           </div>
         </div>
         <button className="text-black bg-gray-100 rounded-full">
-          <Link href="/courses" className="flex items-center gap-1 px-3 sm:px-4 py-2.5">
+          <Link
+            href="/courses"
+            className="flex items-center gap-1 px-3 sm:px-4 py-2.5"
+          >
             <p className="-mt-0.5 hidden sm:block">مشاهده همه</p>
             <ArrowOutwardIcon className="-rotate-90" fontSize="small" />
           </Link>
@@ -52,32 +62,19 @@ function LatestCourses() {
           }}
           breakpoints={{
             992: {
-              slidesPerView: 3
+              slidesPerView: 3,
             },
             596: {
-              slidesPerView: 2
-            }
+              slidesPerView: 2,
+            },
           }}
           className="w-full h-full"
         >
-          <SwiperSlide>
-            <CourseBox />
-          </SwiperSlide>
-          <SwiperSlide>
-            <CourseBox />
-          </SwiperSlide>
-          <SwiperSlide>
-            <CourseBox />
-          </SwiperSlide>
-          <SwiperSlide>
-            <CourseBox />
-          </SwiperSlide>
-          <SwiperSlide>
-            <CourseBox />
-          </SwiperSlide>
-          <SwiperSlide>
-            <CourseBox />
-          </SwiperSlide>
+          {courses?.map((course) => (
+            <SwiperSlide key={course.id}>
+              <CourseBox {...course} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </div>
