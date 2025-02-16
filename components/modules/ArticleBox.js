@@ -33,17 +33,17 @@ function ArticleBox(props) {
             </Link>
           </div>
           <Link
-            href={`/articles?category=${props.category.name}`}
+            href={`/articles?category=${props?.category?.name}`}
             className="block text-primaryBlue bg-gray-100 rounded-full px-4 py-1.5 text-sm hover:opacity-80 transition-all"
           >
-            {props.category.title}
+            {props?.category?.title}
           </Link>
         </div>
         <div className="flex items-center justify-end gap-0.5 text-[15px]">
           <span className="text-gray-600">
             <AccessTimeIcon fontSize="small" /> زمان مطالعه:{" "}
           </span>
-          <span>{props.time.toLocaleString("fa")} دقیقه</span>
+          <span>{props?.time?.toLocaleString("fa")} دقیقه</span>
         </div>
       </div>
     </div>
