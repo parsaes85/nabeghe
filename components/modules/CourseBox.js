@@ -6,19 +6,20 @@ import WatchLaterIcon from "@mui/icons-material/WatchLater";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 
+
 function CourseBox(props) {
   return (
     <div>
       <div className="relative">
         <Link href={`/course/${props.name}`}>
-          <img src={props.images[0]} alt="" className="w-full rounded-3xl" />
+          <img src={props?.images ? props?.images[0] : ""} alt="" className="w-full rounded-3xl" />
         </Link>
         <Link
-          href={`/courses?category=${props.category.name}`}
+          href={`/courses?category=${props?.category?.name}`}
           className="absolute top-3 left-3 rounded-full text-white bg-black bg-opacity-20 py-2 px-4 flex gap-1 items-center transition-all hover:opacity-70"
         >
           <WindowIcon />
-          <p>{props.category.title}</p>
+          <p>{props?.category?.title}</p>
         </Link>
       </div>
       <div className="mx-4">
@@ -34,11 +35,11 @@ function CourseBox(props) {
         <div className="flex gap-6 mt-5">
           <div className="text-gray-700 flex gap-2 items-center">
             <FileCopyIcon fontSize="" />
-            <p className="text-sm">{props.seasons.toLocaleString("fa")} فصل</p>
+            <p className="text-sm">{props?.seasons?.toLocaleString("fa")} فصل</p>
           </div>
           <div className="text-gray-700 flex gap-2 items-center">
             <WatchLaterIcon fontSize="" />
-            <p className="text-sm">{props.time.toLocaleString("fa")} ساعت</p>
+            <p className="text-sm">{props?.time?.toLocaleString("fa")} ساعت</p>
           </div>
         </div>
         <div
@@ -72,7 +73,7 @@ function CourseBox(props) {
                 ""
               )}
               <p className="font-bold text-[22px] tracking-[-0.09em]">
-                {props.price.toLocaleString("fa-IR")}{" "}
+                {props?.price?.toLocaleString("fa-IR")}{" "}
                 <span className="font-normal text-gray-600 text-sm tracking-normal">
                   تومان
                 </span>
