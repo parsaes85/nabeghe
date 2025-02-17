@@ -1,10 +1,10 @@
-import { baseUrl } from "@/data/variables"
+import { baseUrl } from "@/data/variables";
 
 async function getMenus() {
-    const res = await fetch(`${baseUrl}/menus`)
-    const resData = await res.json()
+  const res = await fetch(`${baseUrl}/menus`);
+  const resData = await res.json();
 
-    return resData
+  return resData;
 }
 
-export default getMenus
+export default getMenus;

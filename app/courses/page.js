@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "@/components/modules/Navbar";
 import Footer from "@/components/modules/Footer";
 import Main from "@/components/templates/Courses/Main";
+import getCourses from "@/funcs/getCourses";
 
 function Courses() {
   return (

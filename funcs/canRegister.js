@@ -1,14 +1,14 @@
-import { baseUrl } from "@/data/variables"
+import { baseUrl } from "@/data/variables";
 
 async function canRegister(email) {
   try {
-    const res = await fetch(`${baseUrl}/users?email=${email}`)
-    const data = await res.json()
+    const res = await fetch(`${baseUrl}/users?email=${email}`);
+    const data = await res.json();
 
-    return data.length ? false : true
+    return data.length ? false : true;
   } catch (error) {
-    return false
+    return false;
   }
 }
 
-export default canRegister
+export default canRegister;

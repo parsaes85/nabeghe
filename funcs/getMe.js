@@ -1,11 +1,11 @@
-import getCookie from "./cookies/getCookie"
-import { baseUrl } from "@/data/variables"
+import getCookie from "./cookies/getCookie";
+import { baseUrl } from "@/data/variables";
 
 async function getMe() {
-    const res = await fetch(`${baseUrl}/users?token=${getCookie("token")}`)
-    const resData = await res.json()
+  const res = await fetch(`${baseUrl}/users?token=${getCookie("token")}`);
+  const resData = await res.json();
 
-    return resData.length ? resData[0] : null
+  return resData.length ? resData[0] : null;
 }
 
-export default getMe
+export default getMe;

@@ -3,7 +3,7 @@ import Link from "next/link";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 
-function SideColumn() {
+function SideColumn(props) {
   return (
     <div className="sticky top-24 space-y-6">
       <div className="bg-gradient-to-b from-gray-100 to-white p-5 pt-0 rounded-2xl space-y-4">
@@ -12,17 +12,30 @@ function SideColumn() {
         </div>
         <div className="flex items-center justify-between">
           <p className="text-gray-600 text-lg font-bold">هزینه ثبت نام:</p>
-          <div>
-            <p className="text-gray-700 line-through tracking-[-0.12em] text-lg text-end -mb-1">
-              ۱،۱۹۹،۰۰۰
-            </p>
-            <p className="font-bold text-[22px] tracking-[-0.09em] text-nowrap">
-              ۱،۰۷۹،۰۰۰{" "}
-              <span className="font-normal text-gray-600 text-sm tracking-normal">
-                تومان
-              </span>
-            </p>
-          </div>
+          {props.price ? (
+            <div>
+              {props.discount ? (
+                <p className="text-gray-700 line-through tracking-[-0.12em] text-lg text-end -mb-1">
+                  {props?.price?.toLocaleString("fa-IR")}
+                </p>
+              ) : (
+                ""
+              )}
+              <p className="font-bold text-[22px] tracking-[-0.09em] text-nowrap">
+                {(
+                  props.price -
+                  (props.price * props.discount) / 100
+                ).toLocaleString("fa-IR")}{" "}
+                <span className="font-normal text-gray-600 text-sm tracking-normal">
+                  تومان
+                </span>
+              </p>
+            </div>
+          ) : (
+            <div className="font-bold text-[26px] tracking-normal text-green-400 mt-0.5">
+              رایگان
+            </div>
+          )}
         </div>
         <div className="flex items-center gap-3">
           <button className="flex-1 text-white bg-primaryBlue flex items-center gap-1 px-4 py-2.5 justify-center rounded-full hover:opacity-80 transition-all">
@@ -45,7 +58,7 @@ function SideColumn() {
             />
             <div>
               <Link href="#" className="block">
-                جلال بهرامی راد
+                {props.teacher.fullname}
               </Link>
               <Link href="#" className="block text-primaryBlue text-sm">
                 دیدن رزومه

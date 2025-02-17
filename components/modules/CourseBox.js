@@ -12,7 +12,7 @@ function CourseBox(props) {
     <div>
       <div className="relative">
         <Link href={`/course/${props.name}`}>
-          <img src={props?.images ? props?.images[0] : ""} alt="" className="w-full rounded-3xl" />
+          <img src={props?.images ? props?.images[0] : null} alt="" className="w-full rounded-3xl" />
         </Link>
         <Link
           href={`/courses?category=${props?.category?.name}`}
@@ -56,7 +56,7 @@ function CourseBox(props) {
             <div className="text-sm">
               <p className="text-gray-600">مدرس دوره:</p>
               <Link href="#" className="font-bold">
-                پارسا اسماعیلی
+                {props.teacher.fullname}
               </Link>
             </div>
           </div>
@@ -64,16 +64,16 @@ function CourseBox(props) {
             <div>
               {props.discount ? (
                 <p className="text-gray-700 line-through tracking-[-0.12em] text-lg text-end -mb-1">
-                  {(
-                    props.price +
-                    (props.price * props.discount) / 100
-                  ).toLocaleString("fa-IR")}
+                  {props?.price?.toLocaleString("fa-IR")}
                 </p>
               ) : (
                 ""
               )}
               <p className="font-bold text-[22px] tracking-[-0.09em]">
-                {props?.price?.toLocaleString("fa-IR")}{" "}
+                {(
+                  props.price -
+                  (props.price * props.discount) / 100
+                ).toLocaleString("fa-IR")}{" "}
                 <span className="font-normal text-gray-600 text-sm tracking-normal">
                   تومان
                 </span>

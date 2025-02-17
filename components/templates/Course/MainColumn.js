@@ -4,13 +4,13 @@ import SeasonsSection from "./SeasonsSection";
 import CommentsSection from "./CommentsSection";
 import DescriptionSection from "./DescriptionSection";
 
-function MainColumn() {
+function MainColumn(props) {
   return (
     <>
-      <HeaderSection />
-      <DescriptionSection />
+      <HeaderSection {...props.courseData} />
+      <DescriptionSection desc={props.courseData.desc} />
       <SeasonsSection />
-      <CommentsSection />
+      <CommentsSection courseId={props.courseData.id} />
     </>
   );
 }

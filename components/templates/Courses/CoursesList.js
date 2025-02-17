@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CourseBox from "@/components/modules/CourseBox";
 import TuneIcon from "@mui/icons-material/Tune";
 import CircularProgress from "@mui/material/CircularProgress";
+import getCourses from "@/funcs/getCourses";
 
 function CoursesList({ setIsFiltersSidebarOpen }) {
+  const [courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    getCourses("").then((res) => setCourses(res));
+  }, []);
+
   return (
     <>
       <div className="flex gap-4">
@@ -47,11 +54,9 @@ function CoursesList({ setIsFiltersSidebarOpen }) {
         </div>
       </div>
       <div className="grid gap-x-5 gap-y-16 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-3">
-        <CourseBox />
-        <CourseBox />
-        <CourseBox />
-        <CourseBox />
-        <CourseBox />
+        {courses.map((course) => (
+          <CourseBox key={course.id} {...course} />
+        ))}
       </div>
       <div className="flex gap-1 items-center justify-center w-fit mx-auto bg-gray-100 rounded-full px-8 py-2 text-primaryBlue mt-12">
         <span>درحال بارگذاری</span>
