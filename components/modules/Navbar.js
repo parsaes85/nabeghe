@@ -20,6 +20,7 @@ import getMe from "@/funcs/getMe";
 import deleteCookie from "@/funcs/cookies/deleteCookie";
 import getUsersCartCourses from "@/funcs/getUsersCartCourses";
 import getMenus from "@/funcs/getMenus";
+import getCookie from "@/funcs/cookies/getCookie";
 
 function Navbar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -33,17 +34,17 @@ function Navbar() {
     getMenus().then((res) => setMenus(res));
     getMe().then((res) => {
       setUserInfos(res);
-      getUsersCartCourses(Number(res?.id)).then((res) =>
+      getUsersCartCourses(getCookie("nabeghe-token")).then((res) =>
         setUserCartCourses(res)
       );
     });
   }, []);
 
   function logoutHandler() {
-    deleteCookie("token");
+    deleteCookie("nabeghe-token");
     getMe().then((res) => {
       setUserInfos(res);
-      getUsersCartCourses(Number(res?.id)).then((res) =>
+      getUsersCartCourses(getCookie("nabeghe-token")).then((res) =>
         setUserCartCourses(res)
       );
     });

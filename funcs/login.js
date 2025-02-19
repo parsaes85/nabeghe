@@ -21,7 +21,10 @@ async function login(data, router, setIsLoaderPending) {
     const resData = await res.json();
 
     if (resData.length) {
-      setCookie("token", resData[0].token, { secure: true, "max-age": 3600 });
+      setCookie("nabeghe-token", resData[0].token, {
+        secure: true,
+        "max-age": 3600 * 24,
+      });
       router.push("/");
       setIsLoaderPending(false);
     } else {

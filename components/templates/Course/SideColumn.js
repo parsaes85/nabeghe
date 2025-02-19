@@ -1,9 +1,31 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import addCourseToCart from "@/funcs/addCourseToCart";
+import {
+  addOrRemoveCourseFromFavorites,
+  isCourseInFavorites,
+} from "@/funcs/addOrRemoveCourseFromFavorites";
 
 function SideColumn(props) {
+  const [isCourseInFavoritesState, setIsCourseInFavoritesState] =
+    useState(null);
+
+  const addOrRemoveHandler = () => {
+    addOrRemoveCourseFromFavorites(props);
+    isCourseInFavorites(props.id).then((res) => {
+      setIsCourseInFavoritesState(!Boolean(res));
+    });
+  };
+
+  useEffect(() => {
+    isCourseInFavorites(props.id).then((res) => {
+      setIsCourseInFavoritesState(Boolean(res));
+    });
+  }, []);
+
   return (
     <div className="sticky top-24 space-y-6">
       <div className="bg-gradient-to-b from-gray-100 to-white p-5 pt-0 rounded-2xl space-y-4">
@@ -38,11 +60,19 @@ function SideColumn(props) {
           )}
         </div>
         <div className="flex items-center gap-3">
-          <button className="flex-1 text-white bg-primaryBlue flex items-center gap-1 px-4 py-2.5 justify-center rounded-full hover:opacity-80 transition-all">
+          <button
+            className="flex-1 text-white bg-primaryBlue flex items-center gap-1 px-4 py-2.5 justify-center rounded-full hover:opacity-80 transition-all"
+            onClick={() => addCourseToCart(props)}
+          >
             <p className="-mt-0.5">اضافه به سبد</p>
             <ArrowOutwardIcon className="-rotate-90" fontSize="small" />
           </button>
-          <span className="bg-gray-100 text-gray-600 rounded-full py-2 px-3 hover:text-red-500 transition-all cursor-pointer">
+          <span
+            className={`bg-gray-100 text-gray-600 rounded-full py-2 px-3 transition-all cursor-pointer ${
+              isCourseInFavoritesState ? "text-red-500" : "text-gray-600"
+            }`}
+            onClick={addOrRemoveHandler}
+          >
             <FavoriteIcon fontSize="small" />
           </span>
         </div>

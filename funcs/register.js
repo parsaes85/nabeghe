@@ -1,7 +1,6 @@
 import axios from "axios";
 import { baseUrl } from "@/data/variables";
 import setCookie from "./cookies/setCookie";
-import canRegister from "./canRegister";
 import Swal from "sweetalert2";
 
 const Toast = Swal.mixin({
@@ -15,6 +14,16 @@ const Toast = Swal.mixin({
   },
 });
 
+async function canRegister(email) {
+  try {
+    const { data } = await axios.get(`${baseUrl}/users?email=${email}`);
+
+    return data.length ? false : true;
+  } catch (error) {
+    return false;
+  }
+}
+
 async function register(data, router, setIsLoaderPending) {
   try {
     if (await canRegister(data.email)) {
@@ -23,7 +32,10 @@ async function register(data, router, setIsLoaderPending) {
         role: "student",
         token: crypto.randomUUID(),
       });
-      setCookie("token", res.data.token, { secure: true, "max-age": 3600 });
+      setCookie("nabeghe-token", res.data.token, {
+        secure: true,
+        "max-age": 3600 * 24,
+      });
       router.push("/");
       setIsLoaderPending(false);
       return res;
