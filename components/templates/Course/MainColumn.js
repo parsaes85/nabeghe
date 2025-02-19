@@ -9,7 +9,7 @@ function MainColumn(props) {
     <>
       <HeaderSection {...props.courseData} />
       <DescriptionSection desc={props.courseData.desc} />
-      <SeasonsSection />
+      <SeasonsSection courseId={props.courseData.id} />
       <CommentsSection courseId={props.courseData.id} />
     </>
   );
