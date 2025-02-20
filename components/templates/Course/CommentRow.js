@@ -2,7 +2,7 @@ import React from "react";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ReplyIcon from "@mui/icons-material/Reply";
 
-function CommentRow(props) {
+function CommentRow({ setIsCommentReply, commentInfos }) {
   return (
     <div>
       <div className="border py-4 px-6 rounded-3xl">
@@ -14,12 +14,15 @@ function CommentRow(props) {
               className="w-10 rounded-full"
             />
             <div>
-              <p>امید تاجیک</p>
+              <p>{commentInfos.username}</p>
               <p className="text-sm text-gray-600">۲ هفته پیش</p>
             </div>
           </div>
           <div className="flex gap-2 items-center self-end">
-            <button className="flex items-center gap-1 rounded-full text-sm bg-gray-100 text-gray-600 py-2 pl-3 pr-4 hover:text-primaryBlue transition-all">
+            <button
+              className="flex items-center gap-1 rounded-full text-sm bg-gray-100 text-gray-600 py-2 pl-3 pr-4 hover:text-primaryBlue transition-all"
+              onClick={() => setIsCommentReply(commentInfos)}
+            >
               <span>پاسخ</span>
               <span>
                 <ReplyIcon />
@@ -27,7 +30,7 @@ function CommentRow(props) {
             </button>
             <div className="relative">
               <span className="absolute -top-2 -right-0 text-white bg-red-600 text-xs rounded-full px-1">
-                ۳
+                {commentInfos?.likes?.toLocaleString("fa")}
               </span>
               <span className="bg-gray-100 text-gray-600 rounded-full py-2 px-3 hover:text-red-500 transition-all cursor-pointer">
                 <FavoriteIcon fontSize="small" />
@@ -36,13 +39,13 @@ function CommentRow(props) {
           </div>
         </div>
         <div className="border-t mt-2 pt-2">
-          <p className="text-gray-600">{props.comment}</p>
+          <p className="text-gray-600">{commentInfos.comment}</p>
         </div>
       </div>
-      {props.answers.length ? (
+      {commentInfos.answers.length ? (
         <div className="pr-8">
           <div className="pt-3 pr-8 border-r space-y-3">
-            {props.answers.map((answer) => (
+            {commentInfos.answers.map((answer) => (
               <div className="border py-4 px-6 rounded-3xl" key={answer.id}>
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
                   <div className="flex items-center gap-2">

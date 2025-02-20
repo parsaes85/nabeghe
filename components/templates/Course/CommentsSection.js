@@ -6,6 +6,7 @@ import getCourseComments from "@/funcs/getCourseComments";
 
 function CommentsSection({ courseId }) {
   const [courseComments, setCourseComments] = useState([]);
+  const [isCommentReply, setIsCommentReply] = useState(null);
 
   function getCourseCommentsHandler() {
     getCourseComments(courseId).then((res) => setCourseComments(res));
@@ -20,8 +21,16 @@ function CommentsSection({ courseId }) {
       <h5 className="font-bold text-lg">دیدگاه و پرسش</h5>
 
       <div className="mt-4">
-        <SendComment />
-        <Comments courseComments={courseComments} />
+        <SendComment
+          getCourseCommentsHandler={getCourseCommentsHandler}
+          isCommentReply={isCommentReply}
+          setIsCommentReply={setIsCommentReply}
+          courseId={courseId}
+        />
+        <Comments
+          courseComments={courseComments}
+          setIsCommentReply={setIsCommentReply}
+        />
       </div>
     </div>
   );
