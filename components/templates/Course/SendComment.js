@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import sendComment from "@/funcs/sendComment";
+import sendCommentReply from "@/funcs/sendCommentReply";
 
 function SendComment({
   getCourseCommentsHandler,
@@ -12,6 +13,9 @@ function SendComment({
 
   const sendCommentHandler = () => {
     if (isCommentReply) {
+      sendCommentReply(getCourseCommentsHandler, commentText, isCommentReply);
+      setCommentText("");
+      setIsCommentReply(null)
     } else {
       sendComment(getCourseCommentsHandler, courseId, commentText);
       setCommentText("");
@@ -27,7 +31,7 @@ function SendComment({
         }  flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mt-5`}
       >
         <div className="flex items-center flex-wrap gap-3">
-          <p>جلال بهرامی راد</p>
+          <p>شما</p>
           <span className="w-1 h-1 bg-gray-200 rounded-full"></span>
           <p className="text-sm text-gray-700">در پاسخ به</p>
           <span className="w-1 h-1 bg-gray-200 rounded-full"></span>
@@ -38,7 +42,7 @@ function SendComment({
               className="w-10 rounded-full"
             />
             <div>
-              <p>امید تاجیک</p>
+              <p>{isCommentReply?.commentUserTarget}</p>
               <p className="text-sm text-gray-600">۲ هفته پیش</p>
             </div>
           </div>
